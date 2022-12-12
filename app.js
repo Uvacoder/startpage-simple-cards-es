@@ -4,52 +4,36 @@
 
 /* -------------------------------------------------------- */
 
-const NAME = "Reyes";
+const NAME = "Eliton";
 
 const CARDS = [
   {
-    name: "Discord",
-    icon: "ri-discord-fill",
-    link: "https://discord.com/app",
+    name: "Home Assistant",
+    icon: "ri-home-wifi-fill",
+    link: "http://192.168.0.203:8123",
     color: "#5865F2",
   },
   {
-    name: "Reddit",
-    icon: "ri-reddit-fill",
-    link: "https://www.reddit.com/",
-    color: "#FF4500",
+    name: "Node-RED",
+    icon: "ri-node-tree",
+    link: "http://192.168.0.203:1880",
+    color: "#5865F2",
   },
   {
-    name: "Figma",
-    icon: "ri-pen-nib-fill",
-    link: "https://www.figma.com/",
+    name: "Navidrome",
+    icon: "ri-music-2-fill",
+    link: "http://192.168.0.203:4533",
+    color: "#5865F2",
+  },
+  {
+    name: "Gmail",
+    icon: "ri-google-fill",
+    link: "https://mail.google.com/",
   },
   {
     name: "Github",
     icon: "ri-github-fill",
     link: "https://github.com/",
-  },
-  {
-    name: "Twitter",
-    icon: "ri-twitter-fill",
-    link: "https://twitter.com",
-    color: "#1DA1F2",
-  },
-  {
-    name: "Dribbble",
-    icon: "ri-dribbble-fill",
-    link: "https://dribbble.com/",
-    color: "#ea4c89",
-  },
-  {
-    name: "Hashnode",
-    icon: "ri-newspaper-line",
-    link: "https://hashnode.com/",
-  },
-  {
-    name: "CodeSandbox",
-    icon: "ri-braces-fill",
-    link: "https://codesandbox.io/dashboard/",
   },
   {
     name: "YouTube",
@@ -58,15 +42,49 @@ const CARDS = [
     color: "#FF0000",
   },
   {
+    name: "Reddit",
+    icon: "ri-reddit-fill",
+    link: "https://www.reddit.com/",
+    color: "#FF4500",
+  },  
+  {
+    name: "Twitter",
+    icon: "ri-twitter-fill",
+    link: "https://twitter.com",
+    color: "#1DA1F2",
+  },
+  {
     name: "LinkedIn",
     icon: "ri-linkedin-fill",
     link: "https://www.linkedin.com/",
   },
-  {
-    name: "Gmail",
-    icon: "ri-google-fill",
-    link: "https://mail.google.com/",
-  },
+  // {
+  //   name: "Discord",
+  //   icon: "ri-discord-fill",
+  //   link: "https://discord.com/app",
+  //   color: "#5865F2",
+  // },
+  // {
+  //   name: "Figma",
+  //   icon: "ri-pen-nib-fill",
+  //   link: "https://www.figma.com/",
+  // },
+  // {
+  //   name: "Dribbble",
+  //   icon: "ri-dribbble-fill",
+  //   link: "https://dribbble.com/",
+  //   color: "#ea4c89",
+  // },
+  // {
+  //   name: "Hashnode",
+  //   icon: "ri-newspaper-line",
+  //   link: "https://hashnode.com/",
+  // },
+  // {
+  //   name: "CodeSandbox",
+  //   icon: "ri-braces-fill",
+  //   link: "https://codesandbox.io/dashboard/",
+  // },
 ];
 
 /* -------------------------------------------------------- */
@@ -76,28 +94,28 @@ const CARDS = [
 /******************/
 
 const DAYS = [
-  "Sunday",
-  "Monday",
-  "Tuesday",
-  "Wednesday",
-  "Thursday",
-  "Friday",
-  "Saturday",
+  "Domingo",
+  "Segunda",
+  "Terça",
+  "Quarta",
+  "Quinta",
+  "Sexta",
+  "Sábado",
 ];
 
 const MONTHS = [
-  "January",
-  "February",
-  "March",
-  "April",
-  "May",
-  "June",
-  "July",
-  "August",
-  "September",
-  "October",
-  "November",
-  "December",
+  "Janeiro",
+  "Fevereiro",
+  "Março",
+  "Abril",
+  "Maio",
+  "Junho",
+  "Julho",
+  "Agosta",
+  "Setembro",
+  "Outubro",
+  "Novembro",
+  "Dezembro",
 ];
 
 const updateDate = () => {
@@ -115,9 +133,10 @@ const updateDate = () => {
   let currentYear = completeDate.getFullYear();
 
   // Update the Time
-  currentTime.innerHTML = `${
-    currentHour % 12 == 0 ? "12" : currentHour % 12
-  }:${currentMinute} ${currentHour > 11 ? "PM" : "AM"}`;
+  // currentTime.innerHTML = `${
+  //   currentHour % 12 == 0 ? "12" : currentHour % 12
+  // }:${currentMinute} ${currentHour > 11 ? "PM" : "AM"}`;
+  currentTime.innerHTML = `${currentHour}:${currentMinute}`;
 
   // Update the Date
   currentDate.innerHTML = `${DAYS[currentDay]} ${currentNumber}, ${MONTHS[currentMonth]} ${currentYear}`;
