@@ -1,16 +1,16 @@
 ![](./assets/header.png)
 
-### Root is a start-page aimed to simplicity and elegance
+### Root é uma página inicial voltada para simplicidade e elegância
 
-This project is blazing fast :zap:, it only contains an html, css and javascript files.
+Este projeto é extremamente rápido :zap:, contém apenas arquivos html, css e javascript.
 
-## Customizing
+## Personalizando
 
-Root was created to be lightweight, fast and easy to customize.
+O Root foi criado para ser leve, rápido e fácil de customizar.
 
-### Changing Colors
+### Mudança de Cores
 
-To change the colors used in the startpage edit `styles.css`.
+Para alterar as cores usadas na página inicial, edite `styles.css`.
 
 ```css
 :root {
@@ -21,11 +21,11 @@ To change the colors used in the startpage edit `styles.css`.
 }
 ```
 
-### Changing Name and Adding Custom Cards
+### Alteração de nome e adição de cartões personalizados
 
-> This project uses [Remix Icons](https://remixicon.com/).
+> Este projeto usa [Remix Icons](https://remixicon.com/).
 
-To change the default name and edit the cards, edit `app.js`. It should look something like this:
+Para alterar o nome padrão e editar os cartões, edite `app.js`. Deve ser algo como isto:
 
 ```js
 const NAME = "John Doe";
@@ -44,7 +44,7 @@ const CARDS = [
 ];
 ```
 
-To add a new card, just append a new object to the `CARDS` constant. The object should look something like this:
+Para adicionar um novo cartão, basta anexar um novo objeto à constante `CARDS`. O objeto deve se parecer com isto:
 
 ```js
 {
@@ -56,14 +56,14 @@ To add a new card, just append a new object to the `CARDS` constant. The object 
 },
 ```
 
-> To get the icon class-name, just go to [Remix Icons](https://remixicon.com/), select the desired icon. You should see something like this: `<i class="this-is-the-class-name"></i>`.
+> Para obter o nome da classe do ícone, basta acessar [Remix Icons](https://remixicon.com/), selecionar o ícone desejado. Você deve ver algo como isto: `<i class="this-is-the-class-name"></i>`.
 
-> If you prefer to copy the link to the clipboard instead of the default behavior, just add `clipboard: true` to the card object.
+> Se você preferir copiar o link para a área de transferência em vez do comportamento padrão, basta adicionar `clipboard: true` ao objeto do cartão.
 
-> Optional individual card accent color can be achieved by setting a `color: string` property in the card object. 
+> A cor de destaque do cartão individual opcional pode ser obtida definindo uma propriedade `color: string` no objeto do cartão.
 
-To use 24 hour time simply change the time section of `app.js` to
+Para usar o horário de 24 horas, basta alterar a seção de tempo de `app.js` para
 ```
-// Update the Time
+// Atualiza a hora
   currentTime.innerHTML = `${currentHour}:${currentMinute}`;
 ```
