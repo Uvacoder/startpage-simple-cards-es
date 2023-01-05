@@ -19,21 +19,23 @@ const CARDS = [
     link: "http://192.168.0.203:1880",
     color: "#5865F2",
   },
-  {
+/*   {
     name: "Navidrome",
     icon: "ri-music-2-fill",
     link: "http://192.168.0.203:4533",
     color: "#5865F2",
-  },
+  }, */
   {
     name: "Gmail",
     icon: "ri-google-fill",
     link: "https://mail.google.com/",
+    color: "#cb3a2e",
   },
   {
     name: "Github",
     icon: "ri-github-fill",
     link: "https://github.com/",
+    color: "#f0f6fc",
   },
   {
     name: "YouTube",
@@ -45,7 +47,7 @@ const CARDS = [
     name: "Reddit",
     icon: "ri-reddit-fill",
     link: "https://www.reddit.com/",
-    color: "#FF4500",
+    color: "#ff4500",
   },  
   {
     name: "Twitter",
@@ -57,6 +59,7 @@ const CARDS = [
     name: "LinkedIn",
     icon: "ri-linkedin-fill",
     link: "https://www.linkedin.com/",
+    color: "#0a66c2",
   },
   // {
   //   name: "Discord",
@@ -94,13 +97,13 @@ const CARDS = [
 /******************/
 
 const DAYS = [
-  "Domingo",
-  "Segunda",
-  "Terça",
-  "Quarta",
-  "Quinta",
-  "Sexta",
-  "Sábado",
+  "domingo",
+  "segunda",
+  "terça",
+  "quarta",
+  "quinta",
+  "sexta",
+  "sábado",
 ];
 
 const MONTHS = [
@@ -138,8 +141,8 @@ const updateDate = () => {
   // }:${currentMinute} ${currentHour > 11 ? "PM" : "AM"}`;
   currentTime.innerHTML = `${currentHour}:${currentMinute}`;
 
-  // Update the Date
-  currentDate.innerHTML = `${DAYS[currentDay]} ${currentNumber}, ${MONTHS[currentMonth]} ${currentYear}`;
+  // Update the Date "Hoje é quarta, dia 04 de Janeiro de 2023"
+  currentDate.innerHTML = `${DAYS[currentDay]}, dia ${currentNumber} de ${MONTHS[currentMonth]} de ${currentYear}`;
 
   // Create a Loop
   setTimeout(() => {
