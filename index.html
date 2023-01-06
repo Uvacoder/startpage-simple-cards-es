@@ -1,36 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css"
-      rel="stylesheet"
-    />
 
-    <title>root: ~#</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="./styles.css" />
-    <base target="_blank">
-  </head>
-  <body>
-    <div class="container">
-      <header class="header">
-        <div>
-          <h1>Olá, <span id="userName">Eliton</span>.</h1>
-          <p>Hoje é <span id="currentDate">Segunda 4, Janeiro 2023</span>.</p>
-        </div>
-        <p id="currentTime">00:00 PM</p>
-      </header>
-      <main id="cardContainer"></main>
-    </div>
-    <footer>By Eliton, inspirado em: <a href="https://github.com/imreyesjorge/root-startpage">reyes</a></footer>
-    <script src="./app.js"></script>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!--   <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet" /> -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet" />
+  <title>root: ~#</title>
+  <link rel="preload" as="font" crossorigin="anonymous" type="font/woff2"
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" />
+  <link rel="stylesheet" href="./styles.css" />
+  <base target="_blank">
+</head>
+
+<body>
+  <div class="container">
+    <header class="header">
+      <div>
+        <h1>Olá, <span id="userName">Name</span>.</h1>
+        <p  id="fullDate">Hoje é <span id="currentDate">Segunda 4, Janeiro 2023</span>.</p>
+      </div>
+      <form id="searchbar" method="get" action="https://google.com/search?q=q" autocomplete="off">
+        <input autofocus type="search" placeholder="Google" id="searchbar_input" name="q">
+      </form>
+      <p id="currentTime">00:00 PM</p>
+    </header>
+    <main id="cardContainer"></main>
+  </div>
+  <footer>By Eliton, inspirado em: <a href="https://github.com/imreyesjorge/root-startpage">@imreyesjorge</a> e <a href="https://github.com/jesse-chelin/root-startpage">@jesse-chelin</a></footer>
+  <script src="./app.js"></script>
+</body>
+
 </html>

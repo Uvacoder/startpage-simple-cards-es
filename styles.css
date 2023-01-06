@@ -1,9 +1,9 @@
 /* Custom Variables | Color Scheme */
 
 :root {
-  --primary: #ffd166;
+  --primary: #769aee;
   --text-light: #eeeeee;
-  --background: #0d1b2a;
+  --background: #17191C;
   --background-light: #1b263b;
 }
 
@@ -20,13 +20,10 @@ body {
   font-family: "Open Sans", sans-serif;
 
   padding: 2rem 4rem;
-
+  background-image: url('mohammad-alizade-XgeZu2jBaVI-unsplash.jpg');
+  background-size: cover;
   background-color: var(--background);
   box-sizing: border-box;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 h1 {
@@ -34,7 +31,7 @@ h1 {
   font-weight: bold;
 }
 
-h1 > span {
+h1>span {
   color: var(--primary);
 }
 
@@ -46,30 +43,11 @@ main {
   justify-content: center;
 }
 
-footer {
-  color: rgba(255, 255, 255, 0.4);
-  font-size: 0.8rem;
-
-  margin-top: 2rem;
-}
-
-footer > a:link,
-footer > a:visited {
-  color: inherit;
-}
-
-footer > a:hover {
-  color: var(--primary);
-}
-
-.container {
-  width: 100%;
-  max-width: 1280px;
+img {
+  width: 80px;
 }
 
 .header {
-  font-weight: 400;
-
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -81,7 +59,6 @@ footer > a:hover {
 
 #currentTime {
   font-size: 4rem;
-  font-weight: 600;
 }
 
 @media screen and (max-width: 1250px) {
@@ -103,17 +80,21 @@ footer > a:hover {
   }
 }
 
+.card {
+  flex-grow: 1;
+}
+
 .card:link,
 .card:visited {
   color: white;
   text-decoration: none;
 
-  margin: 0.5rem; /* 1.2rem */
-  padding: 2rem 6rem; /* 4rem 8rem */
+  margin: 2rem;
+  padding: 1rem 2rem;
 
   background-color: var(--background-light);
-  border-radius: 15px;
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 21px;
+  border: 2px solid transparent;
 
   display: flex;
   justify-content: center;
@@ -124,45 +105,107 @@ footer > a:hover {
   position: relative;
 
   outline: none;
-  transition: 0.1s;
+  transition: 0.2s;
 }
 
 .card:hover,
 .card:focus {
   border-color: var(--primary);
   color: var(--primary);
-
-  transform: scale(1.02);
+  transform: scale(1.2);
 }
 
-.card:focus > .card__name {
+.card:focus>.card__name {
   bottom: 0;
 }
 
-.card:hover > .card__name {
+.card:hover>.card__name {
   bottom: 0;
 }
 
 .card__icon {
-  font-size: 2rem;
+  font-size: 0.2rem;
 
   padding: 1rem;
 
-  background-color: rgba(255, 255, 255, 0.05);
-  border-radius: 50%;
+  /*background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 50%;*/
+
+  display: grid;
+  place-items: center;
+}
+
+.card__emoji {
+  font-size: 50pt;
+
+  padding: 0.2rem;
+
+  /*background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 50%;*/
+
+  display: grid;
+  place-items: center;
+}
+
+.card__image {
+
+  padding: 0.2rem;
+
+  /*background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 50%;*/
 
   display: grid;
   place-items: center;
 }
 
 .card__name {
-  font-weight: 300;
-
+  font-weight: 600;
   transform: translate(-50%, -50%);
-
   position: absolute;
-  bottom: -25%;
+  bottom: -35%;
   left: 50%;
+  transition: 0.2s;
+}
 
+footer {
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 0.8rem;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+footer>a:link,
+footer>a:visited {
+  color: inherit;
+}
+
+footer>a:hover {
+  color: var(--primary);
+}
+
+#searchbar {
+  text-align: center;
   transition: 0.1s;
+}
+
+#searchbar_input,
+select,
+textarea {
+  background-color: rgba(255, 255, 255, 0.05);
+  color: var(--text-light);
+  font-size: 2rem;
+
+  background-color: var(--background-light);
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, .05);
+
+  padding: .5rem;
+  transition: 0.1s;
+  font-family: 'Inter', sans-serif;
+}
+
+#searchbar_input:focus,
+#searchbar_input:hover {
+  border-color: var(--primary);
+  outline: none;
 }

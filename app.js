@@ -9,121 +9,109 @@ const NAME = "Eliton";
 const CARDS = [
   {
     name: "CasaOS",
-    icon: "ri-focus-2-line",
+    icon: "",
     link: "http://192.168.0.203:88",
+    img: "../root-startpage/icons/Casaos_logo.svg",
     color: "#5865F2",
   },
   {
     name: "CasaOS",
-    icon: "ri-focus-2-line",
+    icon: "",
     link: "http://192.168.0.120:88",
+    img: "../root-startpage/icons/Casaos_logo.svg",
     color: "#5865F2",
   },
   {
-    name: "Home Assistant",
-    icon: "ri-home-wifi-fill",
+    name: "HomeAssistant",
+    icon: "",
     link: "http://192.168.0.203:8123",
+    img: "../root-startpage/icons/Home_Assistant_logo.svg",
     color: "#5865F2",
   },
   {
     name: "Pi-hole",
-    icon: "ri-shield-fill", //"ri-spy-fill",
+    icon: "",
     link: "http://192.168.0.200/admin",
+    img: "../root-startpage/icons/Pi-hole_logo.svg",
+    color: "#5865F2",
+  },
+  {
+    name: "Node-RED",
+    icon: "",
+    img: "../root-startpage/icons/NodeRED_logo.svg",
+    link: "http://192.168.0.203:1880",
     color: "#5865F2",
   },
   {
     name: "ESPHome",
-    icon: "ri-bug-fill",
+    icon: "",
     link: "http://192.168.0.203:6052",
+    img: "../root-startpage/icons/ESPHome_logo.svg",
     color: "#5865F2",
   },
   {
     name: "esp32testeswitches",
-    icon: "ri-cpu-fill",
+    icon: "",
+    img: "../root-startpage/icons/ESPHome_logo.svg",
     link: "http://192.168.0.14/",
     color: "#5865F2",
   },
   {
     name: "esp-base",
-    icon: "ri-cpu-fill",
+    icon: "",
+    img: "../root-startpage/icons/ESPHome_logo.svg",
     link: "http://192.168.0.50",
     color: "#5865F2",
   },
   {
-    name: "Node-RED",
-    icon: "ri-node-tree",
-    link: "http://192.168.0.203:1880",
-    color: "#5865F2",
-  },
-  {
     name: "Gmail",
-    icon: "ri-google-fill",
+    icon: "",
+    img: "../root-startpage/icons/Gmail_logo.svg",
     link: "https://mail.google.com/",
     color: "#cb3a2e",
   },
   {
     name: "Github",
-    icon: "ri-github-fill",
+    icon: "",
+    img: "../root-startpage/icons/Github_logo.svg",
     link: "https://github.com/",
     color: "#f0f6fc",
   },
   {
     name: "YouTube",
-    icon: "ri-youtube-fill",
+    icon: "",
+    img: "../root-startpage/icons/YouTube_logo.svg",
     link: "https://www.youtube.com/",
     color: "#FF0000",
   },
   {
     name: "Reddit",
-    icon: "ri-reddit-fill",
+    icon: "",
+    img: "../root-startpage/icons/Reddit_logo.svg",
     link: "https://www.reddit.com/",
     color: "#ff4500",
   },
   {
     name: "Twitter",
-    icon: "ri-twitter-fill",
+    icon: "",
+    img: "../root-startpage/icons/Twitter_logo.svg",
     link: "https://twitter.com",
     color: "#1DA1F2",
   },
   {
     name: "Roteador 1",
-    icon: "ri-wifi-fill",
+    icon: "",
+    img: "../root-startpage/icons/TPLink_logo.svg",
     link: "http://192.168.0.1/",
     color: "#0a66c2",
   },
   {
     name: "Roteador 2",
-    icon: "ri-wifi-fill",
+    icon: "",
+    img: "../root-startpage/icons/TPLink_logo.svg",
     link: "http://192.168.0.2/",
     color: "#0a66c2",
   },
-  // {
-  //   name: "Discord",
-  //   icon: "ri-discord-fill",
-  //   link: "https://discord.com/app",
-  //   color: "#5865F2",
-  // },
-  // {
-  //   name: "Figma",
-  //   icon: "ri-pen-nib-fill",
-  //   link: "https://www.figma.com/",
-  // },
-  // {
-  //   name: "Dribbble",
-  //   icon: "ri-dribbble-fill",
-  //   link: "https://dribbble.com/",
-  //   color: "#ea4c89",
-  // },
-  // {
-  //   name: "Hashnode",
-  //   icon: "ri-newspaper-line",
-  //   link: "https://hashnode.com/",
-  // },
-  // {
-  //   name: "CodeSandbox",
-  //   icon: "ri-braces-fill",
-  //   link: "https://codesandbox.io/dashboard/",
-  // },
 ];
 
 /* -------------------------------------------------------- */
@@ -230,7 +218,7 @@ const formatDigit = (digit) => {
 };
 
 /******************/
-/* CARDS FUNCTION */
+/* ICON CARDS FUNCTION */
 /******************/
 
 const printCards = () => {
@@ -238,8 +226,19 @@ const printCards = () => {
     let currentCard = document.createElement("a");
     let currentCardText = document.createElement("p");
     currentCardText.appendChild(document.createTextNode(card.name));
-    let currentCardIcon = document.createElement("i");
-    currentCardIcon.classList.add(card.icon);
+    let currentCardIcon;
+
+    if (card.icon === "") {
+      currentCardIcon = document.createElement("p");
+      var useElem = document.createElement("img");
+      useElem.setAttribute("src", card.img);
+
+      currentCardIcon.appendChild(useElem);     
+    } else {
+/*       currentCardIcon = document.createElement("i");
+      currentCardIcon.classList.add(card.icon); */
+    }
+
 
     // Style the Card Element
     currentCard.classList.add("card");
@@ -253,37 +252,7 @@ const printCards = () => {
 
     currentCard.append(currentCardIcon);
     currentCard.append(currentCardText);
-
-    // Initialize flag attributes
-    currentCard.setAttribute("isHovered", false);
-    currentCard.setAttribute("isFocused", false);
-
     cardContainer.appendChild(currentCard);
-
-    addCustomColorListener(currentCard, card);
-
-    // Handle the click event
-    currentCard.addEventListener("click", async (event) => {
-      // If the card doesn't have `clipboard: true` don't do anything
-      if (!card.clipboard) return;
-
-      // Prevent the page from opening
-      event.preventDefault();
-      // Copy the href to the clipboard
-      try {
-        await navigator.clipboard.writeText(card.link);
-        currentCard.blur();
-        currentCardText.innerText = "Saved to clipboard!";
-        setTimeout(() => {
-          currentCardText.innerText = card.name;
-        }, 1500);
-      } catch {
-        currentCardText.innerText = "Unable to copy";
-        setTimeout(() => {
-          currentCardText.innerText = card.name;
-        }, 1500);
-      }
-    });
   }
 };
 
@@ -294,3 +263,30 @@ const printCards = () => {
 userName.innerHTML = NAME;
 printCards();
 updateDate();
+
+$(document).ready(function() {
+   var accordionTitle = $('.accordion-title');
+   var accordionText = $('.accordion-text');
+   var speed = 300;
+
+   accordionTitle.on('click', function() {
+       var thisAccordion = $(this);
+       var isActive = thisAccordion.hasClass('active');
+
+       if( isActive ) {
+           thisAccordion
+               .removeClass('active')
+               .parent().find('.accordion-text').slideUp(speed);
+       } else {
+           accordionTitle.removeClass('active');
+           accordionText.slideUp(speed);
+           thisAccordion
+               .addClass('active')
+               .parent().find('.accordion-text').slideDown(speed);
+       }
+   });
+
+   if($(window).width() >= 1024){
+    accordionTitle.first().click();
+   }
+});
