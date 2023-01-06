@@ -21,7 +21,7 @@ body {
   color: var(--text-light);
   font-family: "Open Sans", sans-serif;
 
-  padding: 0rem 1rem;
+  padding: 0rem 9rem;
   background-image: url('mohammad-alizade-XgeZu2jBaVI-unsplash.jpg');
   background-size: cover;
   background-color: var(--background);
@@ -60,7 +60,8 @@ img {
 }
 
 #currentTime {
-  font-size: 4rem;
+  font-size: 6rem;
+  font-weight: 600;
 }
 
 @media screen and (max-width: 1250px) {
