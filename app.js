@@ -8,9 +8,45 @@ const NAME = "Eliton";
 
 const CARDS = [
   {
+    name: "CasaOS",
+    icon: "ri-focus-2-line",
+    link: "http://192.168.0.203:88",
+    color: "#5865F2",
+  },
+  {
+    name: "CasaOS",
+    icon: "ri-focus-2-line",
+    link: "http://192.168.0.120:88",
+    color: "#5865F2",
+  },
+  {
     name: "Home Assistant",
     icon: "ri-home-wifi-fill",
     link: "http://192.168.0.203:8123",
+    color: "#5865F2",
+  },
+  {
+    name: "Pi-hole",
+    icon: "ri-shield-fill", //"ri-spy-fill",
+    link: "http://192.168.0.200/admin",
+    color: "#5865F2",
+  },
+  {
+    name: "ESPHome",
+    icon: "ri-bug-fill",
+    link: "http://192.168.0.203:6052",
+    color: "#5865F2",
+  },
+  {
+    name: "esp32testeswitches",
+    icon: "ri-cpu-fill",
+    link: "http://192.168.0.14/",
+    color: "#5865F2",
+  },
+  {
+    name: "esp-base",
+    icon: "ri-cpu-fill",
+    link: "http://192.168.0.50",
     color: "#5865F2",
   },
   {
@@ -19,12 +55,6 @@ const CARDS = [
     link: "http://192.168.0.203:1880",
     color: "#5865F2",
   },
-/*   {
-    name: "Navidrome",
-    icon: "ri-music-2-fill",
-    link: "http://192.168.0.203:4533",
-    color: "#5865F2",
-  }, */
   {
     name: "Gmail",
     icon: "ri-google-fill",
@@ -48,7 +78,7 @@ const CARDS = [
     icon: "ri-reddit-fill",
     link: "https://www.reddit.com/",
     color: "#ff4500",
-  },  
+  },
   {
     name: "Twitter",
     icon: "ri-twitter-fill",
@@ -56,9 +86,15 @@ const CARDS = [
     color: "#1DA1F2",
   },
   {
-    name: "LinkedIn",
-    icon: "ri-linkedin-fill",
-    link: "https://www.linkedin.com/",
+    name: "Roteador 1",
+    icon: "ri-wifi-fill",
+    link: "http://192.168.0.1/",
+    color: "#0a66c2",
+  },
+  {
+    name: "Roteador 2",
+    icon: "ri-wifi-fill",
+    link: "http://192.168.0.2/",
     color: "#0a66c2",
   },
   // {
