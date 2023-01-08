@@ -10,35 +10,35 @@ const CARDS = [
   {
     name: "Gmail",
     icon: "",
-    img: "../root-startpage/icons/Gmail.svg",
+    img: "icons/Gmail.svg",
     link: "https://mail.google.com/",
     color: "#cb3a2e",
   },
   {
     name: "YouTube",
     icon: "",
-    img: "../root-startpage/icons/YouTube.svg",
+    img: "icons/YouTube.svg",
     link: "https://www.youtube.com/",
     color: "#FF0000",
   },
   {
     name: "Github",
     icon: "",
-    img: "../root-startpage/icons/Github.svg",
+    img: "icons/Github.svg",
     link: "https://github.com/",
     color: "#f0f6fc",
   },
   {
     name: "Reddit",
     icon: "",
-    img: "../root-startpage/icons/Reddit.svg",
+    img: "icons/Reddit.svg",
     link: "https://www.reddit.com/",
     color: "#ff4500",
   },
   {
     name: "Twitter",
     icon: "",
-    img: "../root-startpage/icons/Twitter.svg",
+    img: "icons/Twitter.svg",
     link: "https://twitter.com",
     color: "#1DA1F2",
   },
@@ -46,34 +46,34 @@ const CARDS = [
     name: "CasaOS",
     icon: "",
     link: "http://192.168.0.203:88",
-    img: "../root-startpage/icons/Casaos.svg",
+    img: "icons/Casaos.svg",
     color: "#5865F2",
   },
   {
     name: "CasaOS",
     icon: "",
     link: "http://192.168.0.120:88",
-    img: "../root-startpage/icons/Casaos.svg",
+    img: "icons/Casaos.svg",
     color: "#5865F2",
   },
   {
     name: "Home Assistant",
     icon: "",
     link: "http://192.168.0.203:8123",
-    img: "../root-startpage/icons/Home_Assistant.svg",
+    img: "icons/Home_Assistant.svg",
     color: "#5865F2",
   },
   {
     name: "Pi-hole",
     icon: "",
     link: "http://192.168.0.200/admin",
-    img: "../root-startpage/icons/Pi-hole.svg",
+    img: "icons/Pi-hole.svg",
     color: "#5865F2",
   },
   {
     name: "Node-RED",
     icon: "",
-    img: "../root-startpage/icons/NodeRED.svg",
+    img: "icons/NodeRED.svg",
     link: "http://192.168.0.203:1880",
     color: "#5865F2",
   },
@@ -81,34 +81,36 @@ const CARDS = [
     name: "ESPHome",
     icon: "",
     link: "http://192.168.0.203:6052",
-    img: "../root-startpage/icons/ESPHome.svg",
+    img: "icons/ESPHome.svg",
     color: "#5865F2",
   },
   {
     name: "esp32testeswitches",
     icon: "",
-    img: "../root-startpage/icons/ESPHome.svg",
+    img: "icons/ESPHome.svg",
     link: "http://192.168.0.14/",
+    clipboard: true,
     color: "#5865F2",
   },
   {
     name: "esp-base",
     icon: "",
-    img: "../root-startpage/icons/ESPHome.svg",
+    img: "icons/ESPHome.svg",
     link: "http://192.168.0.50",
+    clipboard: true,
     color: "#5865F2",
   },
   {
     name: "Roteador 1",
     icon: "",
-    img: "../root-startpage/icons/TPLink.svg",
+    img: "icons/TPLink.svg",
     link: "http://192.168.0.1/",
     color: "#0a66c2",
   },
   {
     name: "Roteador 2",
     icon: "",
-    img: "../root-startpage/icons/TPLink.svg",
+    img: "icons/TPLink.svg",
     link: "http://192.168.0.2/",
     color: "#0a66c2",
   },
@@ -146,39 +148,39 @@ const MONTHS = [
 ];
 
 const updateDate = () => {
-  // Create a new Date object and get the complete Date/Time information
+  // Cria um novo objeto Date e obtém as informações completas de Data/Hora
   const completeDate = new Date();
 
-  // Time Variables
+  // Variáveis de tempo
   let currentHour = formatDigit(completeDate.getHours());
   let currentMinute = formatDigit(completeDate.getMinutes());
 
-  // Date Variables
+  // Variáveis de Data
   let currentDay = completeDate.getDay();
   let currentNumber = completeDate.getDate();
   let currentMonth = completeDate.getMonth();
   let currentYear = completeDate.getFullYear();
 
-  // Update the Time
+  // Atualiza a hora
   // currentTime.innerHTML = `${
   //   currentHour % 12 == 0 ? "12" : currentHour % 12
   // }:${currentMinute} ${currentHour > 11 ? "PM" : "AM"}`;
   currentTime.innerHTML = `${currentHour}:${currentMinute}`;
 
-  // Update the Date "Hoje é quarta, dia 04 de Janeiro de 2023"
+  // Atualização da Data "Hoje é quarta, dia 04 de Janeiro de 2023"
   currentDate.innerHTML = `${DAYS[currentDay]}, dia ${currentNumber} de ${MONTHS[currentMonth]} de ${currentYear}`;
 
-  // Create a Loop
+  // Cria um loop
   setTimeout(() => {
     updateDate();
   }, 1000);
 };
 
 const addCustomColorListener = (htmlNode, card) => {
-  // If a `customColor` isn't provided, don't do anything
+  // Se um `customColor` não for fornecido, não faça nada
   if (!card?.color) return;
 
-  // Add custom color whenever the cursor enters the card
+  // Adicionar cor personalizada sempre que o cursor entrar no card
   htmlNode.addEventListener("mouseenter", (event) => {
     htmlNode.style.color = card.color;
     htmlNode.style.borderColor = card.color;
@@ -186,7 +188,7 @@ const addCustomColorListener = (htmlNode, card) => {
     event.target.setAttribute("isHovered", true);
   });
 
-  // Remove custom color whenever the cursor leaves the card
+  // Remove a cor personalizada sempre que o cursor sai do card
   htmlNode.addEventListener("mouseleave", (event) => {
     event.target.setAttribute("isHovered", false);
     if (event.target.getAttribute("isFocused") == "true") return;
@@ -195,7 +197,7 @@ const addCustomColorListener = (htmlNode, card) => {
     htmlNode.style.borderColor = "rgba(255, 255, 255, 0.05)";
   });
 
-  // Add custom color whenever the card is focused
+  // Adicionar cor personalizada sempre que o card estiver em foco
   htmlNode.addEventListener("focus", (event) => {
     htmlNode.style.color = card.color;
     htmlNode.style.borderColor = card.color;
@@ -203,7 +205,7 @@ const addCustomColorListener = (htmlNode, card) => {
     event.target.setAttribute("isFocused", true);
   });
 
-  // Remove custom color whenever the card is blurred
+  // Remove a cor personalizada sempre que o card estiver desfocado
   htmlNode.addEventListener("blur", (event) => {
     event.target.setAttribute("isFocused", false);
     if (event.target.getAttribute("isHovered") == "true") return;
@@ -235,8 +237,8 @@ const printCards = () => {
 
       currentCardIcon.appendChild(useElem);     
     } else {
-/*       currentCardIcon = document.createElement("i");
-      currentCardIcon.classList.add(card.icon); */
+      currentCardIcon = document.createElement("i");
+      currentCardIcon.classList.add(card.icon);
     }
 
 
@@ -252,7 +254,38 @@ const printCards = () => {
 
     currentCard.append(currentCardIcon);
     currentCard.append(currentCardText);
+    // cardContainer.appendChild(currentCard);
+
+    // Initialize flag attributes
+    currentCard.setAttribute("isHovered", false);
+    currentCard.setAttribute("isFocused", false);
+
     cardContainer.appendChild(currentCard);
+
+    addCustomColorListener(currentCard, card);
+
+    // Handle the click event
+    currentCard.addEventListener("click", async (event) => {
+      // If the card doesn't have `clipboard: true` don't do anything
+      if (!card.clipboard) return;
+
+      // Prevent the page from opening
+      event.preventDefault();
+      // Copy the href to the clipboard
+      try {
+        await navigator.clipboard.writeText(card.link);
+        currentCard.blur();
+        currentCardText.innerText = "Saved to clipboard!";
+        setTimeout(() => {
+          currentCardText.innerText = card.name;
+        }, 1500);
+      } catch {
+        currentCardText.innerText = "Unable to copy";
+        setTimeout(() => {
+          currentCardText.innerText = card.name;
+        }, 1500);
+      }
+    });
   }
 };
 
@@ -264,29 +297,29 @@ userName.innerHTML = NAME;
 printCards();
 updateDate();
 
-$(document).ready(function() {
-   var accordionTitle = $('.accordion-title');
-   var accordionText = $('.accordion-text');
-   var speed = 300;
+// $(document).ready(function() {
+//    var accordionTitle = $('.accordion-title');
+//    var accordionText = $('.accordion-text');
+//    var speed = 300;
 
-   accordionTitle.on('click', function() {
-       var thisAccordion = $(this);
-       var isActive = thisAccordion.hasClass('active');
+//    accordionTitle.on('click', function() {
+//        var thisAccordion = $(this);
+//        var isActive = thisAccordion.hasClass('active');
 
-       if( isActive ) {
-           thisAccordion
-               .removeClass('active')
-               .parent().find('.accordion-text').slideUp(speed);
-       } else {
-           accordionTitle.removeClass('active');
-           accordionText.slideUp(speed);
-           thisAccordion
-               .addClass('active')
-               .parent().find('.accordion-text').slideDown(speed);
-       }
-   });
+//        if( isActive ) {
+//            thisAccordion
+//                .removeClass('active')
+//                .parent().find('.accordion-text').slideUp(speed);
+//        } else {
+//            accordionTitle.removeClass('active');
+//            accordionText.slideUp(speed);
+//            thisAccordion
+//                .addClass('active')
+//                .parent().find('.accordion-text').slideDown(speed);
+//        }
+//    });
 
-   if($(window).width() >= 1024){
-    accordionTitle.first().click();
-   }
-});
+//    if($(window).width() >= 1024){
+//     accordionTitle.first().click();
+//    }
+// });
