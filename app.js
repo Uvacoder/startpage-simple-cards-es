@@ -63,10 +63,17 @@ const CARDS = [
     img: "icons/Home_Assistant.svg",
     color: "#5865F2",
   },
+  // {
+  //   name: "Pi-hole",
+  //   icon: "",
+  //   link: "http://192.168.0.200/admin",
+  //   img: "icons/Pi-hole.svg",
+  //   color: "#5865F2",
+  // },
   {
     name: "Pi-hole",
     icon: "",
-    link: "http://192.168.0.200/admin",
+    link: "http://192.168.0.203:5353/admin",
     img: "icons/Pi-hole.svg",
     color: "#5865F2",
   },
