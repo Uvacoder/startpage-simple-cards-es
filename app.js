@@ -49,13 +49,13 @@ const CARDS = [
     img: "icons/Casaos.svg",
     color: "#5865F2",
   },
-  {
-    name: "CasaOS",
-    icon: "",
-    link: "http://192.168.0.120:88",
-    img: "icons/Casaos.svg",
-    color: "#5865F2",
-  },
+  // {
+  //   name: "CasaOS",
+  //   icon: "",
+  //   link: "http://192.168.0.120:88",
+  //   img: "icons/Casaos.svg",
+  //   color: "#5865F2",
+  // },
   {
     name: "Home Assistant",
     icon: "",
